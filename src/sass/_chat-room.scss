@@ -1,0 +1,15 @@
+.header {
+  @include flex(center, space-between);
+  padding: 0 16px;
+  height: 60px;
+
+  &__title {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__desc {
+    font-size: 12px;
+  }
+}

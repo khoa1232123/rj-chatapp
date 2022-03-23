@@ -1,0 +1,35 @@
+.sidebar {
+  background-color: var(--bg-color);
+  height: 100vh;
+  color: var(--white);
+}
+
+.user-info {
+  @include flex(center, space-between);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+
+  &__name {
+    color: var(--white);
+    margin-left: 10px;
+  }
+}
+
+.room {
+  &__list {
+    &__header {
+      .ant-collapse-header {
+        color: var(--white) !important;
+      }
+    }
+
+    .ant-collapse-item {
+      .ant-collapse-content {
+        a {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
