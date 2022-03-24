@@ -1,14 +1,26 @@
 import { Avatar, Button, Typography } from "antd";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
+import { auth } from "../../firebase/config";
 
 const UserInfo = () => {
+  const {
+    user: { displayName, photoURL },
+  } = useContext(AuthContext);
+
   return (
     <div className="user-info">
       <div>
-        <Avatar>K</Avatar>
-        <Typography.Text className="user-info__name">Hello</Typography.Text>
+        <Avatar src={photoURL}>
+          {photoURL ? "" : displayName?.charAt(0)?.toUpperCase()}
+        </Avatar>
+        <Typography.Text className="user-info__name">
+          {displayName}
+        </Typography.Text>
       </div>
-      <Button>Đăng Xuất</Button>
+      <Button ghost onClick={() => auth.signOut()}>
+        Đăng Xuất
+      </Button>
     </div>
   );
 };

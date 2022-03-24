@@ -2,6 +2,7 @@
   @include flex(center, space-between);
   padding: 0 16px;
   height: 60px;
+  border-bottom: 1px solid var(--color-border);
 
   &__title {
     margin-bottom: 0;
@@ -11,5 +12,50 @@
 
   &__desc {
     font-size: 12px;
+  }
+}
+
+.message {
+  margin-bottom: 10px;
+
+  &__info {
+    &__author {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    &__date {
+      margin-left: 10px;
+      font-size: 11px;
+      color: #a7a7a7;
+    }
+  }
+
+  &__content {
+    margin-left: 37px;
+  }
+}
+
+.chat-window {
+  height: 100vh;
+
+  &__content {
+    height: calc(100% - 60px);
+    @include flex(unset, flex-end);
+    flex-direction: column;
+
+    .messages {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  }
+
+  &__form {
+    @include flex(center, center);
+    height: 50px;
+    > div {
+      flex: 1;
+      margin-bottom: 0;
+    }
   }
 }
